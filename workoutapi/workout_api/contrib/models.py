@@ -3,6 +3,6 @@ from sqlalchemy import UUID
 from sqlalchemy.orm import Declarativebase, Mapped, mapped_column
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID 
 
-class BaseModel(DeclarativeBase):
+class BaseModel(Declarativebase):
     id: Mapped[UUID] = mapped_column(PG_UUID(as_uuid=True), default=uuid4, nullable=False)
 
