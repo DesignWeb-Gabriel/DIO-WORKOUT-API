@@ -1,0 +1,30 @@
+# ==============================================================================
+# Workout API - Dependências Python
+# ==============================================================================
+
+# Framework Web
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+
+# Banco de Dados
+sqlalchemy==2.0.41
+psycopg2-binary==2.9.9
+alembic==1.14.0
+
+# Validação e Serialização
+pydantic==2.11.7
+pydantic[email]==2.11.7
+
+# Utilitários
+python-multipart==0.0.17
+python-dotenv==1.0.1
+
+# Desenvolvimento e Testes
+pytest==8.2.2
+pytest-asyncio==0.25.0
+httpx==0.28.1
+
+# Qualidade de Código
+black==24.10.0
+isort==5.13.2
+flake8==7.1.1

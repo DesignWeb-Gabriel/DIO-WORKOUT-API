@@ -1,0 +1,86 @@
+# ==============================================================================
+# Workout API - Docker Compose Configuration
+# ==============================================================================
+
+services:
+  # Banco de Dados PostgreSQL
+  workout_api_db:
+    image: postgres:16-alpine
+    container_name: workout_api_database
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: workout
+      POSTGRES_USER: workout
+      POSTGRES_PASSWORD: workout
+      PGDATA: /data/postgres
+    volumes:
+      - postgres_data:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - workout_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U workout_api -d workout_api"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # Aplicação FastAPI
+  workout_api:
+    build:
+      context: ./workoutapi
+      dockerfile: Dockerfile
+    container_name: workout_api_app
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql://workout:workout@workout_api_db:5432/workout
+      - PYTHONPATH=/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      workout_api_db:
+        condition: service_healthy
+    networks:
+      - workout_network
+    volumes:
+      - ./workoutapi/workout_api:/app/workout_api:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  # Ferramenta de Admin do PostgreSQL (Opcional)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: workout_api_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@workoutapi.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    depends_on:
+      - workout_api_db
+    networks:
+      - workout_network
+    profiles:
+      - tools
+
+# Networks
+networks:
+  workout_network:
+    driver: bridge
+    name: workout_network
+
+# Volumes
+volumes:
+  postgres_data:
+    name: workout_postgres_data
+  pgadmin_data:
+    name: workout_pgadmin_data

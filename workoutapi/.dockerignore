@@ -1,0 +1,66 @@
+# ==============================================================================
+# Docker Ignore - Arquivos a serem excluídos do build
+# ==============================================================================
+
+# Ambientes Virtuais
+workoutapi/
+Lib/
+Scripts/
+Include/
+pyvenv.cfg
+.Python
+
+# Git
+.git/
+.gitignore
+
+# Arquivos Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testes e Coverage
+.coverage
+.pytest_cache/
+.tox/
+.mypy_cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Documentação
+docs/
+*.md
+README*
+
+# Logs
+*.log
+
+# Arquivos de configuração local
+.env
+.env.local
+config.json
+secrets.json
+
+# Build e Cache
+build/
+dist/
+*.egg-info/
+node_modules/
+.sass-cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Outros
+*.tmp
+*.temp
+.cache/ 
