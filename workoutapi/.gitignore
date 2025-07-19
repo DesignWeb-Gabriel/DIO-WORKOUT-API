@@ -1,0 +1,252 @@
+# ==============================================================================
+# Python .gitignore - Configuração Profissional
+# ==============================================================================
+
+# Ambientes Virtuais
+# ------------------------------------------------------------------------------
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.env
+.venv
+workoutapi/
+.Python
+
+# Arquivos Python
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+*.manifest
+*.spec
+
+# Instaladores
+# ------------------------------------------------------------------------------
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs e Bancos de Dados
+# ------------------------------------------------------------------------------
+*.log
+*.sql
+*.sqlite
+*.db
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testes e Cobertura
+# ------------------------------------------------------------------------------
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+htmlcov/
+.nox/
+
+# IDEs e Editores
+# ------------------------------------------------------------------------------
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# Sistema Operacional
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Jupyter Notebook
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# Configurações Sensíveis
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+secrets.json
+config.json
+*.pem
+*.key
+*.p12
+*.p8
+*.mobileprovision
+
+# Documentação
+# ------------------------------------------------------------------------------
+site/
+docs/_build/
+docs/build/
+.readthedocs.yml
+
+# Ferramentas de Desenvolvimento
+# ------------------------------------------------------------------------------
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# Spyder
+.spyderproject
+.spyproject
+
+# mkdocs
+/site
+
+# Flask
+instance/
+.webassets-cache
+
+# Django
+*.pot
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# FastAPI/Uvicorn
+.uvicorn/
+
+# Arquivos de Migração de Banco
+# ------------------------------------------------------------------------------
+# Alembic
+alembic/versions/*.py
+!alembic/versions/__init__.py
+
+# PyInstaller
+# ------------------------------------------------------------------------------
+*.manifest
+*.spec
+
+# Internacionalização
+# ------------------------------------------------------------------------------
+*.mo
+*.pot
+
+# Configurações do Editor
+# ------------------------------------------------------------------------------
+.vscode/
+.history/
+*.code-workspace
+
+# Arquivos Temporários
+# ------------------------------------------------------------------------------
+*.tmp
+*.temp
+.sass-cache/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Deployment
+# ------------------------------------------------------------------------------
+.vercel
+.netlify/
+.serverless/
+
+# Outros
+# ------------------------------------------------------------------------------
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Icon?
+Thumbs.db
+
