@@ -26,7 +26,7 @@ Este documento descreve toda a configuração profissional implementada para a *
 DIO WORKOUT API/
 ├── docker-compose.yml           # Orquestração de containers
 ├── workoutapi/                  # Aplicação Python
-│   ├── .gitignore              # Arquivos ignorados (profissional)
+│   ├── .gitignore              # Arquivos ignorados
 │   ├── .dockerignore           # Otimização Docker build
 │   ├── Dockerfile              # Imagem da aplicação
 │   ├── requirements.txt        # Dependências Python
