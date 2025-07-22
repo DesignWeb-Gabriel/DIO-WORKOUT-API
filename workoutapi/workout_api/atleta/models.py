@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 from workout_api.contrib.models import BaseModel
 from sqlalchemy import DateTime, Float, ForeignKey, String, Column, Integer
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, Mapped, mapped_column  
 
 if TYPE_CHECKING:
     from workout_api.categorias.models import CategoriaModel
@@ -26,5 +26,10 @@ class AtletaModel(BaseModel):
     centro_treinamento_id = Column(Integer, ForeignKey("centro_treinamento.pk_id"), nullable=False)
     
     # Relationships
-    categoria = relationship("CategoriaModel", back_populates="atletas")
+    categoria = Mapped[CategoriaModel] = relationship(
+        back_populates="atletas",
+        cascade="all, delete-orphan",
+    )
+    categoria_id: Mapped[int] = mapped_column(ForeignKey("categorias.pk_id"), nullable=False)
     centro_treinamento = relationship("CentroTreinamentoModel", back_populates="atletas")
+    centro_treinamento_id: Mapped[int] = mapped_column(ForeignKey("centro_treinamento.pk_id"), nullable=False)

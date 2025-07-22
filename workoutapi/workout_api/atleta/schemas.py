@@ -1,4 +1,5 @@
 from typing import Annotated
+from datetime import datetime
 from pydantic import Field, PositiveFloat
 from workout_api.contrib.schemas import BaseSchema, OutMixin
 
@@ -15,5 +16,5 @@ class AtletaIn(Atleta):
 
 class AtletaOut(Atleta, OutMixin):
     pk_id: Annotated[int, Field(description="ID do atleta", example=1)]
-    created_at: Annotated[datetime, Field(description="Data de criação do atleta", example=datetime.now())]
+    created_at: Annotated[datetime, Field(description="Data de criação do atleta")]
     

@@ -2,6 +2,7 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from workout_api.atleta.controller import api_router as atleta_router
+from workout_api.categorias.controller import api_router as categoria_router
 
 # Configuração da aplicação
 app = FastAPI(
@@ -12,8 +13,6 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-app.include_router(atleta_router, prefix="/atleta", tags=["atleta"])
-
 # Configuração CORS
 app.add_middleware(
     CORSMiddleware,
@@ -22,6 +21,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Incluir todos os routers
+app.include_router(atleta_router, prefix="/atleta", tags=["atleta"])
+app.include_router(categoria_router, prefix="/categoria", tags=["categoria"])
 
 # Endpoint de health check
 @app.get("/health")
