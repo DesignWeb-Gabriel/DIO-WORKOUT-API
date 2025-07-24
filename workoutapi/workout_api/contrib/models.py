@@ -7,5 +7,5 @@ Base = declarative_base()
 
 class BaseModel(Base):
     __abstract__ = True
-    id = Column(PG_UUID(as_uuid=True), default=uuid4, nullable=False)
+    id = Column(PG_UUID(as_uuid=True), primary_key=True, default=uuid4, nullable=False)
 

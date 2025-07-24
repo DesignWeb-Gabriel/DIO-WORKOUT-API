@@ -1,5 +1,5 @@
 import uuid
-from fastapi import APIRouter, status, Body
+from fastapi import APIRouter, HTTPException, status, Body
 from pydantic import UUID4
 from sqlalchemy import select
 from workout_api.categorias.schemas import CategoriaIn, CategoriaOut
