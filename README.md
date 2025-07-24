@@ -1,4 +1,4 @@
-# 🏋️ Workout API - Sistema Completo de Gerenciamento de Atletas
+# 🏋️ Workout API - Sistema Completo de Gerenciamento de Competições
 
 Uma **API REST profissional e completa** para gerenciamento de competições de Crossfit, atletas, categorias e centros de treinamento, desenvolvida com **FastAPI**, **PostgreSQL**, **Docker** e **SQLAlchemy**.
 
