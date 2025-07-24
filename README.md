@@ -90,7 +90,7 @@ Uma **API REST profissional e completa** para gerenciamento de atletas, categori
 ## 🔧 Pré-requisitos
 
 - **Docker Desktop** instalado e rodando
-- **Git** (opcional)
+- **Git**
 - **Windows 10+** / **macOS** / **Linux**
 
 ## 🚀 Instalação e Execução
