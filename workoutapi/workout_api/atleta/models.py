@@ -22,7 +22,8 @@ class AtletaModel(BaseModel):
     peso = Column(Float, nullable=False)
     altura = Column(Float, nullable=False)
     sexo = Column(String(1), nullable=False)
-    created_at = Column(DateTime, nullable=False, default=datetime.now)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
     categoria_id = Column(UUID(as_uuid=True), ForeignKey("categorias.id"), nullable=False)
     centro_treinamento_id = Column(UUID(as_uuid=True), ForeignKey("centro_treinamento.id"), nullable=False)
     
