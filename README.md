@@ -625,6 +625,19 @@ docker system prune -f
 
 ---
 
+## ⚠️ Observações Pessoais e Aprendizados
+
+Durante o desenvolvimento, enfrentei alguns desafios devido à abordagem adotada no curso:
+
+- Muitos passos técnicos foram subentendidos, como o uso de `pyenv`, `Makefile`, Alembic e DBeaver, o que exigiu pesquisa externa para entender.
+- A maior parte dos comandos foi apresentada com base em sistemas Linux, o que dificultou o processo para usuários Windows/macOS (como eu).
+- Alguns erros e bugs aparecem ao longo do desenvolvimento e só são corrigidos em vídeos futuros, causando confusão para quem segue a linha cronológica das aulas.
+- Apesar disso, consegui concluir o projeto com sucesso graças ao meu conhecimento prévio de Docker e PostgreSQL, e ao suporte de IA para entender e corrigir falhas.
+
+Essas dificuldades me ajudaram a desenvolver ainda mais autonomia técnica, reforçando minha capacidade de aprender de forma independente e solucionar problemas em ambientes complexos.
+
+---
+
 ## 📚 Documentação Adicional
 
 - [`CONFIGURACAO_COMPLETA.md`](CONFIGURACAO_COMPLETA.md) - Configuração técnica detalhada
